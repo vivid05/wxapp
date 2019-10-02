@@ -27,6 +27,7 @@ swiper-item image{
 .green{
   color: green;
 }
+
 /* .sort_item:nth-child(1){
   background: linear-gradient(to bottom right,#ff9700, #ed1c24);
 }

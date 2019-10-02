@@ -89,6 +89,7 @@
    color="linear-gradient(to right, #4bb0ff, #6149f6)"
    round
    bind:click='confirmBtn'
+   size="large"
   >
   确认提交
   </van-button>

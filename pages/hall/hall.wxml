@@ -12,9 +12,10 @@
 <view class="body">
   <view class="wraper">
     <view wx:for='{{image}}' wx:key='{{index}}' class="item">
-      <image mode="widthFix" src="{{item}}">
-      </image>
-      <text>测试文字测试文字测试文字</text>
+      <navigator hover-class="none" url="../detail/detail">
+        <image mode="widthFix" src="{{item}}"></image>
+        <text>测试文字测试文字测试文字</text>
+      </navigator>
     </view>
   </view>
 </view>

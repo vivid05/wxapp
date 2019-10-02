@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "myswiper": "../components/swiper/swiper"
+    "myswiper": "../components/swiper/swiper",
+    "mywaterfall":"../components/waterfall/waterfall"
   },
   "backgroundTextStyle": "light",
   "navigationBarBackgroundColor": "#9c26b0",

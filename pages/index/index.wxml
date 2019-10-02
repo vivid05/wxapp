@@ -1,4 +1,4 @@
-  <swiper class="a" indicator-dots="true" circular="true" 
+  <swiper indicator-dots="true" circular="true" 
     autoplay="true" interval="3000" duration="500" easing-function="easeInOutCubic">
       <swiper-item>
         <image src="../../images/2.jpg" class="slide-image"/>
@@ -11,44 +11,43 @@
       </swiper-item>
   </swiper>
   <view class="sort">
-  <navigator url="../release/release?kind=电竞">
+  <navigator hover-class="none" url="../release/release?kind=电竞">
     <view style="background: linear-gradient(to bottom right,#ff9700, #ed1c24);" class="sort_item">
         <text>电竞</text>
         <text>Game</text>
     </view>
   </navigator>
-  <navigator url="../release/release?kind=运动">
+  <navigator hover-class="none" url="../release/release?kind=运动">
     <view style="background: linear-gradient(to bottom right,#0081ff, #1cbbb4);" class="sort_item">
         <text>运动</text>
         <text>Sport</text>
     </view>
   </navigator>
-  <navigator url="../release/release?kind=唱歌">
+  <navigator hover-class="none" url="../release/release?kind=唱歌">
     <view style="background: linear-gradient(to bottom right,#39b54a, #8dc63f);" class="sort_item">
         <text>唱歌</text>
         <text>Sing</text>
     </view>
   </navigator>
-  <navigator url="../release/release?kind=电影">
+  <navigator hover-class="none" url="../release/release?kind=电影">
     <view style="background: linear-gradient(to bottom right,#ec008c, #6739b6);" class="sort_item">
         <text>电影</text>
         <text>Movie</text>
     </view>
   </navigator>
-  <navigator hover-class="none" url="../release/release?kind=吃饭">
+  <navigator hover-class="none"  url="../release/release?kind=吃饭">
     <view style="background: linear-gradient(to bottom right,#9000ff, #5e00ff);" class="sort_item">
         <text>吃饭</text>
         <text>Eat</text>
     </view>
   </navigator>
-  <navigator url="../release/release?kind=其他">
+  <navigator hover-class="none" url="../release/release?kind=其他">
     <view style="background: linear-gradient(to bottom right,#f43f3b, #ec008c);" class="sort_item">
         <text>其他</text>
         <text>Other</text>
     </view>
   </navigator>
   </view>
-  <text>{{counter}}</text>
-  <test bind:add='click' text='吴伟伟' title='red'/>
-  <test text='吴伟伟' title='green'/>
+
+ 
   

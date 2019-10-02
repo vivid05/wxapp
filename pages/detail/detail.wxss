@@ -1,18 +1,20 @@
 /* pages/detail/detail.wxss */
 .header{
   display: flex;
+  padding:15px 15px 10px 15px;
   justify-content: space-between;
   align-items: center;
 }
 .userinfo{
   display: flex;
   align-items: center;
-  padding:15px 15px 10px 15px;
+  
 }
-.userinfo>image{ 
+.userAvatarUrl{ 
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
+  overflow: hidden;
 }
 .username{
   display: flex;
@@ -21,7 +23,6 @@
 
 }
 .like{
-  margin-right: 15px;
   position: relative;
 }
 .custom-style{
@@ -49,5 +50,16 @@
 .handleBtn{
   text-align: center;
   margin-top: 80rpx;
+}
+.recommend{
+  background: #F7F7F7;
+  margin-top: 40rpx;
+}
+.recommend>text{
+  display: inline-block;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-left: 45rpx;
+  color: gray;
 }
 

@@ -1,9 +1,11 @@
 <!--pages/detail/detail.wxml-->
 <view class="header">
   <view class="userinfo">
-    <image src="{{userInfo.avatarUrl}}"></image>
+    <view class="userAvatarUrl">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
     <view class="username">
-      <text>{{userInfo.nickName}}</text>
+      <open-data type="userNickName"></open-data>
     </view>
   </view>
   <view>
@@ -38,4 +40,10 @@
   确定加入
   </van-button>
 </view>
+<view class="recommend">
+  <text>相关推荐</text>
+  <mywaterfall image="{{images}}"/>
+</view>
+
+
 
