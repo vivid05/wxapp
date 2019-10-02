@@ -1,0 +1,10 @@
+<!--pages/kuaidi/kuaidi.wxml-->
+<view class="container">
+  <input class="input" bindinput="num" placeholder="输入快递单号" auto-focus/>
+  <button class="button" bindtap="btnClick" type="primary">查询</button>
+  <scroll-view scroll-y style="height: 300px;">
+    <view wx:for="{{infoData}}" wx:key="index">
+      {{item.desc}}
+    </view>
+  </scroll-view>
+</view>

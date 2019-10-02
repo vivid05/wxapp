@@ -1,0 +1,49 @@
+/* pages/release/release.wxss */
+.kind{
+  border-left: 2px solid #f37b1d;
+  padding-left: 8px;
+  margin-left: 5px;
+  margin-top: 10px;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.kind text{
+  color: #f37b1d
+}
+.radio{
+  margin: 5px;
+}
+.radio_item{
+  padding: 5px;
+}
+.radio image{
+  width:25px;
+  height:25px;
+  vertical-align: middle;
+}
+.theme{
+  margin-top: 10px;
+  padding: 5px;
+  height: 130rpx;
+  width: 100%;
+  border-bottom: 1px solid #f37b1d;
+}
+.section{
+  margin-top: 10px;
+  padding: 5px;
+}
+.picker{
+  height: 50rpx;
+  padding: 5px;
+
+}
+.bottom{
+    border-bottom: 1px solid #f37b1d;
+}
+.personNum{
+  margin-top: 10px;
+}
+.confirmBtn{
+  text-align: center;
+  margin-top: 20px;
+}

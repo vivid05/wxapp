@@ -1,0 +1,11 @@
+/* pages/kuaidi/kuaidi.wxss */
+.input{
+  width: 80%;
+  background-color: #ccc;
+  padding: 5px;
+  border-radius: 5px;
+}
+.button{
+  margin-top: 15px;
+  width: 50%;
+}

@@ -1,0 +1,95 @@
+<!--pages/release/release.wxml-->
+<view class="kind">
+  <text>类别</text>
+</view>
+<view  class="radio">
+  <van-radio-group class="radio_item" value="{{ radio }}" bind:change="onChange">
+    <van-radio use-icon-slot name="1">电竞
+      <image
+        slot="icon"
+        src="{{ radio === '1' ? icon[0].active : icon[0].normal }}"
+      />
+    </van-radio>
+    <van-radio use-icon-slot name="2">运动
+      <image
+        slot="icon"
+        src="{{ radio === '2' ? icon[1].active : icon[1].normal }}"
+      />
+    </van-radio>
+    <van-radio use-icon-slot name="3">唱歌
+      <image
+        slot="icon"
+        src="{{ radio === '3' ? icon[2].active : icon[2].normal }}"
+      />
+    </van-radio>
+    <van-radio use-icon-slot name="4">电影
+      <image
+        slot="icon"
+        src="{{ radio === '4' ? icon[3].active : icon[3].normal }}"
+      />
+    </van-radio>
+    <van-radio use-icon-slot name="5">吃饭
+      <image
+        slot="icon"
+        src="{{ radio === '5' ? icon[4].active : icon[4].normal }}"
+      />
+    </van-radio>
+    <van-radio use-icon-slot name="6">其他
+      <image
+        slot="icon"
+        src="{{ radio === '6' ? icon[5].active : icon[5].normal }}"
+      />
+    </van-radio>
+  </van-radio-group>
+</view>
+<view class="kind">
+  <text>主题</text>
+</view>
+  <textarea class="theme" bindinput="getTheme" placeholder="请输入主题..." ></textarea>
+  <view class="kind">
+    <text>时间</text>
+  </view>
+  <view class="section">
+    <picker mode="date" value="{{date}}" start="2019-01-01" end="2019-12-31" bindchange="bindDateChange">
+      <view class="picker">
+        当前选择: {{date}}
+      </view>
+    </picker>
+    <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="bindTimeChange">
+      <view class="picker bottom">
+        当前选择: {{time}}
+      </view>
+    </picker>
+  </view>
+<view class="kind">
+  <text>人数</text>
+</view>
+<view class="personNum"> 
+  <van-stepper
+    value="{{ 1 }}"
+    bind:change="onNumChange"
+    input-width="40px"
+    button-size="37px"
+/>
+</view>
+<view class="kind">
+  <text>活动图片</text>
+</view>
+<mp-cells>
+    <mp-cell>
+        <mp-uploader delete bindfail="uploadError" bindsuccess="uploadSuccess" select="{{selectFile}}" upload="{{uplaodFile}}" files="{{files}}" max-count="5" title="图片上传" tips="图片上传提示"></mp-uploader>
+    </mp-cell>
+</mp-cells>
+<view class="confirmBtn">
+  <van-button
+   color="linear-gradient(to right, #4bb0ff, #6149f6)"
+   round
+   bind:click='confirmBtn'
+  >
+  确认提交
+  </van-button>
+  <van-toast id="van-toast" />
+</view>
+
+
+

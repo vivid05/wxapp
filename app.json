@@ -1,0 +1,55 @@
+{
+  "pages": [
+    
+    "pages/hall/hall",
+    "pages/index/index",
+    "pages/release/release",
+    "pages/mine/mine",
+    "pages/kuaidi/kuaidi"
+  ],
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-cell": "vant-weapp/cell",
+    "van-cell-group": "vant-weapp/cell-group",
+    "van-radio": "vant-weapp/radio/index",
+    "van-radio-group": "vant-weapp/radio-group/index",
+    "van-stepper": "vant-weapp/stepper/index",
+    "van-toast": "vant-weapp/toast/index",
+    "van-tab": "vant-weapp/tab/index",
+    "van-tabs": "vant-weapp/tabs/index",
+    "mp-cells": "./components/cells/cells",
+    "mp-cell": "./components/cell/cell",
+    "mp-uploader": "./components/uploader/uploader"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小米",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "borderStyle":"white",
+    "selectedColor":"#9c26b0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath":"images/index.png",
+        "selectedIconPath":"images/首页_1.png"       
+      },
+      {
+        "pagePath": "pages/hall/hall",
+        "text": "大厅",
+        "iconPath": "images/list.png",
+        "selectedIconPath":"images/list1.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine.png"
+      }
+    ]
+  }
+}

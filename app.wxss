@@ -1,0 +1,46 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/* iconfont */
+@font-face {
+  font-family: 'iconfont';  /* project id 1429053 */
+  src: url('//at.alicdn.com/t/font_1429053_feuk9gdbdq.eot');
+  src: url('//at.alicdn.com/t/font_1429053_feuk9gdbdq.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1429053_feuk9gdbdq.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1429053_feuk9gdbdq.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1429053_feuk9gdbdq.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1429053_feuk9gdbdq.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 30px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.iconchifan:before {
+  content: "\e619";
+}
+
+.iconyouxi:before {
+  content: "\e69f";
+}
+
+.iconchangge:before {
+  content: "\e686";
+}
+
+.iconyundong:before {
+  content: "\e64d";
+}
+
+

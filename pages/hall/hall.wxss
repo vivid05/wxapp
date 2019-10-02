@@ -1,0 +1,35 @@
+/* pages/hall/hall.wxss */
+.body{
+  background: #F7F7F7;
+}
+.wraper{
+  column-count: 2;
+  column-gap: 5px;
+  column-width: 50%;
+  padding: 5px;
+}
+.item{
+  width: 346rpx;
+  background:#fff	;
+  border-radius: 5px;
+  max-height: 780rpx;
+  margin-bottom: 10rpx;
+}
+.item image{
+  width: 100%;
+  height: 90%;
+  border-radius: 5px 5px 0 0;
+}
+.item text{
+  text-align: center;
+  padding: 5px;
+  color: #333;
+  display: inline-block;
+  max-height: 80rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+}
+
+

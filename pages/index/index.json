@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "test":"/components/test/test"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#9c26b0",
+  "navigationBarTitleText": "约玩吧",
+  "navigationBarTextStyle": "white"
+}

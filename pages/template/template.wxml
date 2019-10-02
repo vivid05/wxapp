@@ -1,0 +1,3 @@
+<template name="test">
+  <text class="text" bindtap="click">{{age}}</text>
+</template>
