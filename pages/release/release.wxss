@@ -35,7 +35,11 @@
 .picker{
   height: 50rpx;
   padding: 5px;
-
+}
+.place{
+  height: 40rpx;
+  border-bottom: 1px solid #f37b1d;
+  padding: 20rpx;
 }
 .bottom{
     border-bottom: 1px solid #f37b1d;

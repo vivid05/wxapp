@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "myswiper": "../components/swiper/swiper"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#9c26b0",
+  "navigationBarTitleText": "活动详情",
+  "navigationBarTextStyle": "white"
+}

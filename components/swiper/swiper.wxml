@@ -1,0 +1,7 @@
+<!--components/swiper/swiper.wxml-->
+<swiper indicator-dots="true" circular="true" 
+    autoplay="true" interval="3000" duration="500" indicator-active-color="#9c26b0" easing-function="easeInOutCubic">
+      <swiper-item wx:for="{{arrar}}" wx:key='{{index}}'>
+        <image mode="aspectFill" src="{{item}}" class="slide-image"/>
+      </swiper-item>
+  </swiper>

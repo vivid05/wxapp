@@ -1,0 +1,41 @@
+<!--pages/detail/detail.wxml-->
+<view class="header">
+  <view class="userinfo">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <view class="username">
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view>
+    <view class="like">
+      <van-icon bindclick="like" color="{{color}}" size="20px" name="{{like}}" />
+      <text>{{likeNum}}</text>
+    </view> 
+  </view>
+</view>
+<myswiper arrar='{{ images }}'></myswiper>
+<view class="playinfo">
+  <view class="playitem">
+    <van-icon name="clock-o" style="vertical-align: middle;" size="20px" />
+    <text>时间</text>
+  </view>
+  <view class="playitem">
+    <van-icon size="20px" style="vertical-align: middle;" name="location-o"/>
+    <text>地址</text>
+  </view>
+  <view class="playitem">
+    <van-icon size="20px" style="vertical-align: middle;" name="volume-o"/>
+    <text>内容</text>
+  </view>
+</view>
+<view class="handleBtn">
+  <van-button
+   color="linear-gradient(to right, #4bb0ff, #6149f6)"
+   round
+   bind:click='cancleBtn'
+   size="large"
+  >
+  确定加入
+  </van-button>
+</view>
+

@@ -1,6 +1,6 @@
 {
   "pages": [
-    
+    "pages/detail/detail",
     "pages/hall/hall",
     "pages/index/index",
     "pages/release/release",
@@ -19,7 +19,8 @@
     "van-tabs": "vant-weapp/tabs/index",
     "mp-cells": "./components/cells/cells",
     "mp-cell": "./components/cell/cell",
-    "mp-uploader": "./components/uploader/uploader"
+    "mp-uploader": "./components/uploader/uploader",
+    "van-icon": "vant-weapp/icon/index"
   },
   "window": {
     "backgroundTextStyle": "light",

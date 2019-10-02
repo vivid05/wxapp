@@ -35,6 +35,7 @@ Page({
       }
     ],
     theme:'',
+    place:'',
     date:new Date().toLocaleDateString(),
     time:new Date().toLocaleTimeString(),
     personNum:1,
@@ -113,6 +114,9 @@ Page({
   },
   bindTimeChange(event){
     this.setData({ time: event.detail.value })
+  },
+  getplace(event){
+    this.setData({place:event.detail.value})
   },
   onNumChange(event){
     this.setData({personNum:event.detail})

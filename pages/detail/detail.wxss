@@ -1,0 +1,53 @@
+/* pages/detail/detail.wxss */
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.userinfo{
+  display: flex;
+  align-items: center;
+  padding:15px 15px 10px 15px;
+}
+.userinfo>image{ 
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.username{
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+
+}
+.like{
+  margin-right: 15px;
+  position: relative;
+}
+.custom-style{
+  background:red;
+}
+.like>text{
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  font-size: 13px;
+  color: gray;
+}
+.playinfo{
+  margin: 5px 0 0 5px;
+}
+.playinfo text{
+  font-size: 20px;
+}
+.playitem{
+  margin-bottom: 20rpx;
+}
+.playitem>text{
+  margin-left: 10rpx;
+}
+.handleBtn{
+  text-align: center;
+  margin-top: 80rpx;
+}
+

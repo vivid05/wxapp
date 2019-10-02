@@ -52,15 +52,19 @@
   <view class="section">
     <picker mode="date" value="{{date}}" start="2019-01-01" end="2019-12-31" bindchange="bindDateChange">
       <view class="picker">
-        当前选择: {{date}}
+        日期: {{date}}
       </view>
     </picker>
     <picker mode="time" value="{{time}}" start="00:00" end="24:00" bindchange="bindTimeChange">
       <view class="picker bottom">
-        当前选择: {{time}}
+        时间: {{time}}
       </view>
     </picker>
   </view>
+<view class="kind">
+  <text>地点</text>
+</view>
+<input bindinput="getplace" class="place" type="text" placeholder="请输入地点..." confirm-type="done"></input>
 <view class="kind">
   <text>人数</text>
 </view>
