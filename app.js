@@ -4,8 +4,19 @@ App({
     // 展示本地存储能力
     //var logs = wx.getStorageSync('logs') || []
     //logs.unshift(Date.now())
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //     console.log(res)
+    //     var userInfo = res.userInfo
+    //     var nickName = userInfo.nickName
+    //     var avatarUrl = userInfo.avatarUrl
+    //     var gender = userInfo.gender //性别 0：未知、1：男、2：女
+    //     var province = userInfo.province
+    //     var city = userInfo.city
+    //     var country = userInfo.country
+    //   }
+    // })
     
-
     // 登录
     wx.login({
       success: res => {
@@ -22,6 +33,7 @@ App({
             },
             success:res=>{
               let token=res.data;
+              console.log(token);
               this.globalData.token=token;
               wx.setStorageSync('token', token)
             },
@@ -33,6 +45,6 @@ App({
     })
   },
   globalData: {
-    token:''
+    token:'',
   },
 })

@@ -27,22 +27,20 @@ swiper-item image{
 .green{
   color: green;
 }
-
-/* .sort_item:nth-child(1){
-  background: linear-gradient(to bottom right,#ff9700, #ed1c24);
+.getUserInfo{
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50rpx;
+  background: orange;
 }
-.sort_item1:nth-child(2){
-  background: linear-gradient(to bottom right,#0081ff, #1cbbb4);
+.getUserInfo text{
+  color: white;
 }
-.sort_item:nth-child(3){
-  background: linear-gradient(to bottom right,#39b54a, #8dc63f);
+.getUserInfo button{
+  line-height: 50rpx;
 }
-.sort_item:nth-child(4){
-  background: linear-gradient(to bottom right,#ec008c, #6739b6);
-}
-.sort_item:nth-child(5){
-  background: linear-gradient(to bottom right,#9000ff, #5e00ff);
-}
-.sort_item:nth-child(6){
-  background: linear-gradient(to bottom right,#f43f3b, #ec008c);
-} */

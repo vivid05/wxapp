@@ -48,6 +48,13 @@
     </view>
   </navigator>
   </view>
+  <view  wx:if='{{!loginFlag}}' class="getUserInfo">
+    <text>请先授权登录!!!</text>
+    <view>
+        <button size="mini" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    </view>
+  </view>
+
 
  
   

@@ -7,21 +7,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-    counter:0
+    counter:0,
+    loginFlag:''
   },
+  //----------------------自定义函数-------------------------------------
   click(){
     this.setData({counter:this.data.counter+1})
+  },
+  bindGetUserInfo(res) {
+    console.log(res.detail.userInfo)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // myrequest({
-    //   url:'',
-    // }).then(res=>{
-    //   console.log(res)
-    // })
+    wx.getSetting({
+      success: (res) => {
+        if (res.authSetting['scope.userInfo']) {
+          this.setData({loginFlag:true})
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo)
+            }
+          })
+        } else {
+          this.setData({ loginFlag: false })
+        }
+      }
+    })
+  //  wx.getStorage({
+  //    key: 'loginFlag',
+  //    success: res=> {
+  //      this.setData({loginFlag:res.data})
+  //    },
+  //  })
   },
 
   /**

@@ -1,7 +1,6 @@
 /* pages/mine/mine.wxss */
 .bgc{
   background: #9c26b0;
-  height: 399rpx;
   position: fixed;
   top: 0;
   left: 0;
