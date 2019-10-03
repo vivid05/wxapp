@@ -1,5 +1,6 @@
 // pages/play/play.js
 import myrequest from '../../server.js'
+var app=getApp()
 Page({
 
   /**
