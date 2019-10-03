@@ -1,1 +1,50 @@
 /* pages/mine/mine.wxss */
+.bgc{
+  background: #9c26b0;
+  height: 399rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.personal{
+  position: relative;
+  background: white;
+  height: 300rpx;
+  margin-top: 98rpx;
+  border-radius: 25% 25% 0 0;
+  width: 100%;
+
+}
+.userinfo{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140rpx;
+  top: -50rpx;
+  left: 50%;
+  margin-left: -70rpx;
+}
+.userAvatarUrl{ 
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.username{
+  font-size: 34rpx;
+  margin: 20rpx 0 0 28rpx;
+}
+.items{
+  margin-top: 230rpx;
+}
+.items image{
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.text{
+  font-size: 30rpx;
+}
