@@ -1,7 +1,7 @@
 <!--pages/hall/hall.wxml-->
 <van-tabs sticky color='#9c26b0' active="{{ active }}" bind:change="ontabChange">
-  <van-tab title="推荐"></van-tab>
   <van-tab title="最新"></van-tab>
+  <van-tab title="全部"></van-tab>
   <van-tab title="电竞"></van-tab>
   <van-tab title="运动"></van-tab>
   <van-tab title="唱歌"></van-tab>

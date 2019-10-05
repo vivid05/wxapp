@@ -34,33 +34,28 @@ Page({
         active: '../../images/other1.png'
       }
     ],
+    username:'',
     theme:'',
     place:'',
     date:new Date().toLocaleDateString(),
     time:new Date().toLocaleTimeString(),
     personNum:1,
+    guid:'',
+    userid:''
   },
   //-----------------自定义事件函数-----------------------------------------------
-  // chooseImage: function (e) {
-  //   var that = this;
-  //   wx.chooseImage({
-  //     sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-  //     sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-  //     success: function (res) {
-  //       // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-  //       console.log(123)
-  //       that.setData({
-  //         files: that.data.files.concat(res.tempFilePaths)
-  //       });
-  //       const tempFilePaths = res.tempFilePaths;
-  //     },
-  //     fail:function(err){
-  //       console.log(err)
-  //     }
-  //   })
-  // },
-  previewImage: function (e) {
-    
+  newGuid(){
+    var guid  =  "";
+    for (var i  =  1;  i <=  32;  i++){
+    var  n  =  Math.floor(Math.random() * 16.0).toString(16);
+    guid  +=    n;
+    if ((i == 8) || (i == 12) || (i == 16) || (i == 20))
+        guid  +=  "-";
+    }
+      return  guid;    
+  },
+
+  previewImage: function (e) { 
     wx.previewImage({
       current: e.currentTarget.id, // 当前显示图片的http链接
       urls: this.data.files.url // 需要预览的图片http链接列表
@@ -77,11 +72,16 @@ Page({
     return new Promise((resolve, reject) => {
       wx.uploadFile({
         url: 'http://localhost:8000/upload/img', //仅为示例，非真实的接口地址
+        formData: {
+          'guid':this.data.guid,
+          'userid':this.data.userid
+        },
         filePath: files.tempFilePaths[0],
         name: 'test',
         success(res) {
+          console.log(res)
           var urls = { url: files.tempFilePaths[0]}
-          console.log(urls)
+          //console.log(urls)
           var data=JSON.parse(res.data)
           that.setData({files:that.data.files.concat(urls)})
           resolve(urls);
@@ -99,7 +99,7 @@ Page({
   uploadSuccess(e) {
     console.log('upload success', e.detail)
   },
-  //---------------------------------------------------------------
+  
   onChange(event) {
     console.log(event.detail)
     this.setData({
@@ -122,13 +122,43 @@ Page({
     this.setData({personNum:event.detail})
   },
   confirmBtn(){
-    Toast.success('提交成功');
+    wx.request({
+      url: 'http://localhost:8000/creatplay/creatplay', //仅为示例，并非真实的接口地址
+      data: {
+        redio:this.data.radio,
+        theme:this.data.theme,
+        date:this.data.date,
+        time:this.data.time,
+        place:this.data.place,
+        personNum:this.data.personNum,
+        guid:this.data.guid,
+        username:this.data.username,
+        userid:this.data.userid,
+      },
+      method:'post',
+      success(res) {
+        Toast.success('提交成功');
+        console.log(res.data)
+      },
+      fail(err){
+        Toast.fail('连接服务器失败');
+      }
+    })
+    
   },
-
+//---------------------------------------------------------------
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
+    this.setData({ guid: this.newGuid()});
+    wx.getStorage({
+      key: 'token',
+      success: function(res) {
+        that.setData({userid:res.data})
+      },
+    })
     wx.getSetting({
       success(res) {
         if (res.authSetting['scope.userInfo']) {
@@ -136,6 +166,7 @@ Page({
           wx.getUserInfo({
             success: function (res) {
               console.log(res.userInfo)
+              that.setData({ username: res.userInfo.nickName})
             }
           })
         }

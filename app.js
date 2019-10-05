@@ -33,7 +33,6 @@ App({
             },
             success:res=>{
               let token=res.data;
-              console.log(token);
               this.globalData.token=token;
               wx.setStorageSync('token', token)
             },

@@ -15,6 +15,7 @@ Page({
     this.setData({counter:this.data.counter+1})
   },
   bindGetUserInfo(res) {
+    this.setData({loginFlag:true})
     console.log(res.detail.userInfo)
   },
 
@@ -36,12 +37,6 @@ Page({
         }
       }
     })
-  //  wx.getStorage({
-  //    key: 'loginFlag',
-  //    success: res=> {
-  //      this.setData({loginFlag:res.data})
-  //    },
-  //  })
   },
 
   /**
