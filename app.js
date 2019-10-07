@@ -25,7 +25,7 @@ App({
           var thar=this;
           //发起网络请求
           wx.request({
-            url: 'http://localhost:8000/login/login',
+            url: 'http://192.168.1.107:8000/login/login',
             data: {
               code: res.code,
               Appid:'wx5d7f64288c8cba74',

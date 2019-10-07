@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    playdata:[],
     image: [
       '//ci.xiaohongshu.com/04355dba-0633-5bd0-935f-eac415854d9a?imageView2/2/w/400/q/50/format/jpg',
       '//ci.xiaohongshu.com/fd5e8941-5e03-5f33-875c-222d1861f37d?imageView2/2/w/400/q/50/format/jpg',
@@ -18,15 +19,39 @@ Page({
       ],
       active:0
   },
+  //-----------------------------------自定义函数-----------------------------------------------
+  getPlayinfo(){
+    var that=this;
+    wx.request({
+      url: 'http://192.168.1.107:8000/getplay/getplay', 
+      success(res) {
+        console.log(res.data)
+        var img=[]
+        for(var i=0;i<res.data.length;i++){
+          img[i]=res.data[i].imgPath.split('-')
+          res.data[i].imgPath=img[i]
+        }
+        that.setData({ playdata: (res.data).reverse() })
+       
+      }
+    })   
+  },
   ontabChange(event){
     this.setData({ active: event.detail.index})
+  },
+  toDetail(event){
+    let playdata = JSON.stringify(event.currentTarget.dataset.playdata)
+    wx.navigateTo({
+      url: '../detail/detail?play=' + playdata,
+    })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getPlayinfo()
   },
 
   /**
@@ -61,7 +86,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    wx.showNavigationBarLoading()
+    this.getPlayinfo()
+    setTimeout(function(){
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    },800)
+    
   },
 
   /**

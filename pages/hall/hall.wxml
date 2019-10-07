@@ -11,11 +11,11 @@
 </van-tabs>
 <view class="body">
   <view class="wraper">
-    <view wx:for='{{image}}' wx:key='{{index}}' class="item">
-      <navigator hover-class="none" url="../detail/detail">
-        <image mode="widthFix" src="{{item}}"></image>
-        <text>测试文字测试文字测试文字</text>
-      </navigator>
+    <view wx:for='{{playdata}}' wx:key='{{index}}' class="item">
+      <!-- <navigator hover-class="none" url="../detail/detail"> -->
+        <image bindtap="toDetail" data-playdata="{{item}}" mode="widthFix" src="{{item.imgPath[0]}}"></image>
+        <text>{{item.theme}}</text>
+      <!-- </navigator> -->
     </view>
   </view>
 </view>

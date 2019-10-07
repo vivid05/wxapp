@@ -35,6 +35,7 @@ Page({
       }
     ],
     username:'',
+    userimg:'',
     theme:'',
     place:'',
     date:new Date().toLocaleDateString(),
@@ -70,27 +71,28 @@ Page({
     // 文件上传的函数，返回一个promise
     var that=this;
     return new Promise((resolve, reject) => {
-      wx.uploadFile({
-        url: 'http://localhost:8000/upload/img', //仅为示例，非真实的接口地址
-        formData: {
-          'guid':this.data.guid,
-          'userid':this.data.userid
-        },
-        filePath: files.tempFilePaths[0],
-        name: 'test',
-        success(res) {
-          console.log(res)
-          var urls = { url: files.tempFilePaths[0]}
-          //console.log(urls)
-          var data=JSON.parse(res.data)
-          that.setData({files:that.data.files.concat(urls)})
-          resolve(urls);
-          
-        },
-        fail:function(err){
-          reject(err)
-        }
-      })
+      for(let i=0;i<files.tempFilePaths.length;i++){
+        wx.uploadFile({
+          url: 'http://192.168.1.107:8000/upload/img', //仅为示例，非真实的接口地址
+          formData: {
+            'guid': this.data.guid,
+            'userid': this.data.userid
+          },
+          filePath: files.tempFilePaths[i],
+          name: 'test',
+          success(res) {
+            console.log(res)
+            var urls = { url: files.tempFilePaths[i] } 
+            that.setData({ files: that.data.files.concat(urls) })
+            resolve(files);
+
+          },
+          fail: function (err) {
+            reject(err)
+          }
+        })
+      }
+      
     })
   },
   uploadError(e) {
@@ -123,7 +125,7 @@ Page({
   },
   confirmBtn(){
     wx.request({
-      url: 'http://localhost:8000/creatplay/creatplay', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.1.107:8000/creatplay/creatplay', //仅为示例，并非真实的接口地址
       data: {
         redio:this.data.radio,
         theme:this.data.theme,
@@ -134,14 +136,19 @@ Page({
         guid:this.data.guid,
         username:this.data.username,
         userid:this.data.userid,
+        userimg:this.data.userimg
       },
       method:'post',
       success(res) {
-        Toast.success('提交成功');
         console.log(res.data)
+        if(res.data.status==200){
+          Toast.success('提交成功');
+        }else{
+          Toast.fail('连接服务器失败');
+        }   
       },
       fail(err){
-        Toast.fail('连接服务器失败');
+        Toast.fail('提交失败');
       }
     })
     
@@ -165,8 +172,9 @@ Page({
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称
           wx.getUserInfo({
             success: function (res) {
-              console.log(res.userInfo)
+              //console.log(res.userInfo)
               that.setData({ username: res.userInfo.nickName})
+              that.setData({ userimg: res.userInfo.avatarUrl })
             }
           })
         }

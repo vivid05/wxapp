@@ -2,6 +2,10 @@
 Page({
 
   data: {
+    playdata:{},
+    show:false,
+    imgUrls: [],
+    current:0,
     userInfo: {
       avatarUrl: "",//用户头像
       nickName: "",//用户昵称
@@ -23,6 +27,10 @@ Page({
 
   },
 //--------------------自定义函数-------------------------------------------------
+previewImage(e){
+  this.setData({show:true})
+  this.setData({ current: e.detail.current})
+},
 like(){
   if(this.data.like=='like-o'){
     this.setData({likeNum:this.data.likeNum+1})
@@ -37,6 +45,9 @@ like(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let playdata = JSON.parse(options.play)
+    this.setData({playdata:playdata})
+    this.setData({imgUrls:playdata.imgPath})
     var that = this;
     wx.getUserInfo({
       success: function (res) {

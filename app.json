@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/release/release",
+    "pages/hall/hall",
     "pages/index/index",
     "pages/detail/detail",
-    "pages/hall/hall",
     
+    "pages/release/release",
     "pages/mine/mine",
     "pages/kuaidi/kuaidi"
   ],
@@ -21,13 +21,14 @@
     "mp-cells": "./components/cells/cells",
     "mp-cell": "./components/cell/cell",
     "mp-uploader": "./components/uploader/uploader",
+    "mp-gallery": "./components/gallery/gallery",
     "van-icon": "vant-weapp/icon/index"
   },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "小米",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black" 
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

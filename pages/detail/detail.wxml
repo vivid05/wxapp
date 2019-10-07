@@ -1,11 +1,11 @@
 <!--pages/detail/detail.wxml-->
 <view class="header">
   <view class="userinfo">
-    <view class="userAvatarUrl">
-      <open-data type="userAvatarUrl"></open-data>
+    <view>
+      <image class="userAvatarUrl" src="{{playdata.userimg}}"></image>
     </view>
     <view class="username">
-      <open-data type="userNickName"></open-data>
+      {{playdata.username}}
     </view>
   </view>
   <view>
@@ -15,19 +15,21 @@
     </view> 
   </view>
 </view>
-<myswiper arrar='{{ images }}'></myswiper>
+<myswiper bind:getcurrent="previewImage" data-img="{{playdata.imgPath}}" arrar='{{ playdata.imgPath }}'></myswiper>
+<mp-gallery show="{{show}}" delete="{{false}}" img-urls="{{imgUrls}}"current="{{current}}">
+</mp-gallery>
 <view class="playinfo">
   <view class="playitem">
     <van-icon name="clock-o" style="vertical-align: middle;" size="20px" />
-    <text>时间</text>
+    <text>{{playdata.time}}</text>
   </view>
   <view class="playitem">
     <van-icon size="20px" style="vertical-align: middle;" name="location-o"/>
-    <text>地址</text>
+    <text>{{playdata.place}}</text>
   </view>
   <view class="playitem">
     <van-icon size="20px" style="vertical-align: middle;" name="volume-o"/>
-    <text>内容</text>
+    <text>{{playdata.theme}}</text>
   </view>
 </view>
 <view class="handleBtn">
