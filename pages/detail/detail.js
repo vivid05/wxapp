@@ -1,10 +1,14 @@
 // pages/detail/detail.js
+import Toast from 'vant-weapp/toast/toast';
+import Dialog from 'vant-weapp/dialog/dialog';
+var app=getApp()
 Page({
-
   data: {
     playdata:{},
     show:false,
     imgUrls: [],
+    isDiaabled:false,
+    joinNum:0,
     current:0,
     color:'',
     like:'like-o',
@@ -58,7 +62,35 @@ like(){
   
 },
 joinBtn(enent){
-  console.log(123)
+  Dialog.confirm({
+    title: '确认',
+    message: '确定不会爽约哟~',
+    cancelButtonText:'我再想想' 
+  }).then(() => {
+    // on confirm
+    wx.request({
+      url: 'http://192.168.1.105:8000/joinplay/joinplay',
+      data: {
+        guid: this.data.playdata.guid,
+        userid: this.data.playdata.userid,
+        time: new Date().toLocaleDateString()
+      },
+      method: 'post',
+      success:res=> {
+        if (res.data.status == 0) {
+          Toast.fail('不能重复加入！');
+        } else if (res.data.status == 200) {
+          Toast.success('加入成功！')
+          this.setData({ joinNum: this.data.joinNum + 1 })
+        }
+      }
+    })
+    app.globalData.joinList = [...app.globalData.joinList, this.data.playdata.guid]
+    this.setData({ isDiaabled: true })
+  }).catch(() => {
+    // on cancel
+  });
+
 },
 
   /**
@@ -67,9 +99,13 @@ joinBtn(enent){
   onLoad: function (options) {
     var that=this
     let playdata = JSON.parse(options.play)
+    if (app.globalData.joinList.includes(playdata.guid)){
+      this.setData({ isDiaabled: true})
+    }
     this.setData({playdata:playdata})
     this.setData({likeNum:playdata.likeNum})
     this.setData({imgUrls:playdata.imgPath})
+    this.setData({joinNum:playdata.joinNum})
     wx.getStorage({
       key: playdata.guid,
       success: function(res) {

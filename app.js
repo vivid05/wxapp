@@ -30,5 +30,6 @@ App({
   },
   globalData: {
     token:'',
+    joinList:[]
   },
 })

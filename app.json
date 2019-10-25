@@ -23,7 +23,8 @@
     "mp-cell": "./components/cell/cell",
     "mp-uploader": "./components/uploader/uploader",
     "mp-gallery": "./components/gallery/gallery",
-    "van-icon": "vant-weapp/icon/index"
+    "van-icon": "vant-weapp/icon/index",
+    "van-dialog": "vant-weapp/dialog/index"
   },
   "window": {
     "backgroundTextStyle": "light",

@@ -33,7 +33,7 @@
   </view>
   <view class="playitem">
     <van-icon size="20px" style="vertical-align: middle;" name="friends-o"/>
-    <text>{{playdata.joinNum}}/{{playdata.personNum}}</text>
+    <text>{{joinNum}}/{{playdata.personNum}}</text>
   </view>
 </view>
 <view class="handleBtn">
@@ -42,6 +42,7 @@
    round
    bind:click='joinBtn'
    size="large"
+   disabled="{{isDiaabled}}"
   >
   确定加入
   </van-button>
@@ -50,6 +51,8 @@
   <text>相关推荐</text>
   <mywaterfall image="{{images}}"/>
 </view>
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" cancelButtonText='再想想' />
 
 
 
