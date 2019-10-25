@@ -1,21 +1,6 @@
 //app.js
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    //var logs = wx.getStorageSync('logs') || []
-    //logs.unshift(Date.now())
-    // wx.getUserInfo({
-    //   success: function (res) {
-    //     console.log(res)
-    //     var userInfo = res.userInfo
-    //     var nickName = userInfo.nickName
-    //     var avatarUrl = userInfo.avatarUrl
-    //     var gender = userInfo.gender //性别 0：未知、1：男、2：女
-    //     var province = userInfo.province
-    //     var city = userInfo.city
-    //     var country = userInfo.country
-    //   }
-    // })
+  onLaunch: function () { 
     
     // 登录
     wx.login({
@@ -25,7 +10,7 @@ App({
           var thar=this;
           //发起网络请求
           wx.request({
-            url: 'http://192.168.1.107:8000/login/login',
+            url: 'http://192.168.1.105:8000/login/login',
             data: {
               code: res.code,
               Appid:'wx5d7f64288c8cba74',

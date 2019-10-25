@@ -13,16 +13,15 @@
 </view>
 <view class="items">
   <mp-cells ext-class="my-cells">
-      <mp-cell link hover>
+      <mp-cell link="{{true}}" link hover>
           <view class="text">我发起的</view>
-          <view slot="foot">说明文字</view>
           <view slot="icon"><image src="../../images/faqi.png"/></view>
       </mp-cell>
-      <mp-cell link>
+      <mp-cell link="{{true}}" hover>
           <view class="text">我参加的</view>
           <view slot="icon"><image src="../../images/join.png"/></view>
       </mp-cell>
-      <mp-cell link>
+      <mp-cell link hover>
           <view class="text">我喜欢的</view>
           <view slot="icon"><image src="../../images/like.png"/></view>
       </mp-cell>

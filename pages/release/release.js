@@ -73,7 +73,7 @@ Page({
     return new Promise((resolve, reject) => {
       for(let i=0;i<files.tempFilePaths.length;i++){
         wx.uploadFile({
-          url: 'http://192.168.1.107:8000/upload/img', //仅为示例，非真实的接口地址
+          url: 'http://192.168.1.105:8000/upload/img', //仅为示例，非真实的接口地址
           formData: {
             'guid': this.data.guid,
             'userid': this.data.userid
@@ -125,7 +125,7 @@ Page({
   },
   confirmBtn(){
     wx.request({
-      url: 'http://192.168.1.107:8000/creatplay/creatplay', //仅为示例，并非真实的接口地址
+      url: 'http://192.168.1.105:8000/creatplay/creatplay', //仅为示例，并非真实的接口地址
       data: {
         redio:this.data.radio,
         theme:this.data.theme,

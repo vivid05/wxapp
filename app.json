@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/hall/hall",
-    "pages/index/index",
     "pages/detail/detail",
+    "pages/index/index",
+    
     
     "pages/release/release",
     "pages/mine/mine",

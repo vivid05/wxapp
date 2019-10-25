@@ -31,12 +31,16 @@
     <van-icon size="20px" style="vertical-align: middle;" name="volume-o"/>
     <text>{{playdata.theme}}</text>
   </view>
+  <view class="playitem">
+    <van-icon size="20px" style="vertical-align: middle;" name="friends-o"/>
+    <text>{{playdata.joinNum}}/{{playdata.personNum}}</text>
+  </view>
 </view>
 <view class="handleBtn">
   <van-button
    color="linear-gradient(to right, #4bb0ff, #6149f6)"
    round
-   bind:click='cancleBtn'
+   bind:click='joinBtn'
    size="large"
   >
   确定加入
