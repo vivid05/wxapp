@@ -3,11 +3,10 @@
     "pages/hall/hall",
     "pages/detail/detail",
     "pages/index/index",
-    
-    
     "pages/release/release",
     "pages/mine/mine",
-    "pages/kuaidi/kuaidi"
+    "pages/kuaidi/kuaidi",
+    "pages/mycreatplay/mycreatplay"
   ],
   "usingComponents": {
     "van-button": "vant-weapp/button",
@@ -19,6 +18,7 @@
     "van-toast": "vant-weapp/toast/index",
     "van-tab": "vant-weapp/tab/index",
     "van-tabs": "vant-weapp/tabs/index",
+    "van-notify": "vant-weapp/notify/index",
     "mp-cells": "./components/cells/cells",
     "mp-cell": "./components/cell/cell",
     "mp-uploader": "./components/uploader/uploader",

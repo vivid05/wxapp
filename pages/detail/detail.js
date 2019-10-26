@@ -1,6 +1,7 @@
 // pages/detail/detail.js
 import Toast from 'vant-weapp/toast/toast';
 import Dialog from 'vant-weapp/dialog/dialog';
+import Notify from 'vant-weapp/notify/notify';
 var app=getApp()
 Page({
   data: {
@@ -33,6 +34,8 @@ like(){
       url: 'http://192.168.1.105:8000/like/like',
       data: {
         guid: this.data.playdata.guid,
+        userid:app.globalData.token,
+        time: new Date().toLocaleDateString(),
         kind:1
       },
       method: 'post',
@@ -50,6 +53,8 @@ like(){
       url: 'http://192.168.1.105:8000/like/like',
       data: {
         guid: this.data.playdata.guid,
+        userid: app.globalData.token,
+        time: new Date().toLocaleDateString(),
         kind: 0
       },
       method: 'post',
@@ -57,10 +62,15 @@ like(){
         console.log(res)
       }
     })
-  }
-  
-  
+  } 
 },
+
+callPhone(e) {
+  wx.makePhoneCall({
+    phoneNumber: e.target.dataset.phone //仅为示例，并非真实的电话号码
+  })
+},
+
 joinBtn(enent){
   Dialog.confirm({
     title: '确认',
@@ -72,15 +82,21 @@ joinBtn(enent){
       url: 'http://192.168.1.105:8000/joinplay/joinplay',
       data: {
         guid: this.data.playdata.guid,
-        userid: this.data.playdata.userid,
+        userid: app.globalData.token,
         time: new Date().toLocaleDateString()
       },
       method: 'post',
       success:res=> {
         if (res.data.status == 0) {
-          Toast.fail('不能重复加入！');
+          Toast.fail('不能重复加入!');
         } else if (res.data.status == 200) {
-          Toast.success('加入成功！')
+          //Toast.success('加入成功！')
+          Notify({
+            message: '加入成功，记得及时与发起人取得联系哟~',
+            color: 'white',
+            background: 'green',
+            duration: 4000
+          });
           this.setData({ joinNum: this.data.joinNum + 1 })
         }
       }
@@ -88,7 +104,7 @@ joinBtn(enent){
     app.globalData.joinList = [...app.globalData.joinList, this.data.playdata.guid]
     this.setData({ isDiaabled: true })
   }).catch(() => {
-    // on cancel
+    
   });
 
 },

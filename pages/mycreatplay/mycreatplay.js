@@ -1,28 +1,21 @@
-// pages/mine/mine.js
+// pages/mycreatplay/mycreatplay.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    images:[]
   },
 
-//----------------------自定义函数------------------------------------------------
-  tomyplay(e) {
-    wx.navigateTo({
-      url: `../${e.target.dataset.url}/${e.target.dataset.url}`,
-    })
-  },
 
-  //----------------------自定义函数------------------------------------------------
 
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**

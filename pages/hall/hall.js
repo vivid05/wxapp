@@ -1,4 +1,5 @@
 // pages/hall/hall.js
+import Toast from 'vant-weapp/toast/toast';
 Page({
 
   /**
@@ -9,7 +10,7 @@ Page({
     play_item:[],
     active: 0, 
   },
-  //-----------------------------------自定义函数-----------------------------------------------
+  //-----------------------------------自定义函数------------------------------
   getPlayinfo(redio){
     var that=this;
     wx.request({
@@ -94,6 +95,10 @@ Page({
     setTimeout(function(){
       wx.hideNavigationBarLoading() //完成停止加载
       wx.stopPullDownRefresh() //停止下拉刷新
+      Toast.success({
+        message: '刷新成功!',
+        duration:500
+      })
     },800)
     
   },

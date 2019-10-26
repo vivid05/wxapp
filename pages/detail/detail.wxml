@@ -35,6 +35,10 @@
     <van-icon size="20px" style="vertical-align: middle;" name="friends-o"/>
     <text>{{joinNum}}/{{playdata.personNum}}</text>
   </view>
+  <view class="playitem">
+    <van-icon size="20px" style="vertical-align: middle;" name="phone-o"/>
+    <text bindtap="callPhone" selectable="true" style="color:blue;text-decoration: underline;" data-phone="{{playdata.wechat}}">{{playdata.wechat}}</text>
+  </view>
 </view>
 <view class="handleBtn">
   <van-button
@@ -53,6 +57,7 @@
 </view>
 <van-toast id="van-toast" />
 <van-dialog id="van-dialog" cancelButtonText='再想想' />
+<van-notify id="van-notify" />
 
 
 

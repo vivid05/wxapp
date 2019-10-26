@@ -47,3 +47,14 @@
 .text{
   font-size: 30rpx;
 }
+.note{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  text-align: center;
+  float: right;
+}

@@ -66,6 +66,10 @@
 </view>
 <input bindinput="getplace" class="place" type="text" placeholder="请输入地点..." confirm-type="done"></input>
 <view class="kind">
+  <text>微信号</text>
+</view>
+<input bindinput="getwechat" class="place" type="text" placeholder="请输入您的微信号..." confirm-type="done"></input>
+<view class="kind">
   <text>人数</text>
 </view>
 <view class="personNum"> 

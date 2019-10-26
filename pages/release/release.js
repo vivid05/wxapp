@@ -38,6 +38,7 @@ Page({
     userimg:'',
     theme:'',
     place:'',
+    wechat:'',
     date:new Date().toLocaleDateString(),
     time:new Date().toLocaleTimeString(),
     personNum:1,
@@ -120,6 +121,9 @@ Page({
   getplace(event){
     this.setData({place:event.detail.value})
   },
+  getwechat(e){
+    this.setData({wechat:e.detail.value})
+  },
   onNumChange(event){
     this.setData({personNum:event.detail})
   },
@@ -132,6 +136,7 @@ Page({
         date:this.data.date,
         time:this.data.time,
         place:this.data.place,
+        wechat:this.data.wechat,
         personNum:this.data.personNum,
         guid:this.data.guid,
         username:this.data.username,
