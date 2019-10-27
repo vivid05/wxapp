@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mywaterfall": "../components/waterfall/waterfall"
+  },
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#9c26b0",
+  "navigationBarTitleText": "我参加的",
+  "navigationBarTextStyle": "white"
+}

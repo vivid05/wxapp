@@ -6,7 +6,8 @@
     "pages/release/release",
     "pages/mine/mine",
     "pages/kuaidi/kuaidi",
-    "pages/mycreatplay/mycreatplay"
+    "pages/mycreatplay/mycreatplay",
+    "pages/myjoinplay/myjoinplay"
   ],
   "usingComponents": {
     "van-button": "vant-weapp/button",

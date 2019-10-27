@@ -18,7 +18,7 @@
         <view slot="icon"><image src="../../images/faqi.png"/></view>  
       </mp-cell>
       <mp-cell link="{{true}}" hover>
-          <view bindtap="tomyplay" data-url="mycreatplay" class="text">我参加的</view>
+          <view bindtap="tomyplay" data-url="myjoinplay" class="text">我参加的</view>
           <view slot="icon"><image src="../../images/join.png"/></view>
       </mp-cell>
       <mp-cell link hover>

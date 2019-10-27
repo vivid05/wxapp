@@ -1,2 +1,2 @@
-<!--pages/mycreatplay/mycreatplay.wxml-->
+<!--pages/myjoinplay/myjoinplay.wxml-->
 <mywaterfall bind:todetile="todetile" image="{{images}}"/>

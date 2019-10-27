@@ -1,39 +1,37 @@
-// pages/mycreatplay/mycreatplay.js
-let app=getApp()
+// pages/myjoinplay/myjoinplay.js
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    images:[]
+
   },
 
-
-
-  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://192.168.1.105:8000/getmyplay/getmyplay',
-      data:{
+      url: 'http://192.168.1.105:8000/getmyjoinplay/getmyjoinplay',
+      data: {
         userid: app.globalData.token
       },
-      method:'get',
-      success:res=>{
-        let img=[]
+      method: 'get',
+      success: res => {
+        console.log(res)
+        let img = []
         for (var i = 0; i < res.data.length; i++) {
           img[i] = res.data[i].imgPath.split('-')
           res.data[i].imgPath = img[i]
         }
-        this.setData({images:res.data})
+        this.setData({ images: res.data })
       }
     })
   },
 
-  todetile(data){
+  todetile(data) {
     console.log(data)
     let playdata = JSON.stringify(data.detail)
     wx.navigateTo({
