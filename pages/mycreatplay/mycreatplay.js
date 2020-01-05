@@ -1,5 +1,5 @@
 // pages/mycreatplay/mycreatplay.js
-let app=getApp()
+const app = getApp()
 Page({
 
   /**
@@ -17,7 +17,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://192.168.1.105:8000/getmyplay/getmyplay',
+      url: `${app.globalData.api}getmyplay/getmyplay`,
       data:{
         userid: app.globalData.token
       },

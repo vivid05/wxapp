@@ -2,7 +2,7 @@
 import Toast from 'vant-weapp/toast/toast';
 import Dialog from 'vant-weapp/dialog/dialog';
 import Notify from 'vant-weapp/notify/notify';
-var app=getApp()
+const app = getApp()
 Page({
   data: {
     playdata:{},
@@ -31,7 +31,7 @@ like(){
       data: true,
     })
     wx.request({
-      url: 'http://192.168.1.105:8000/like/like',
+      url: `${app.globalData.api}like/like`,
       data: {
         guid: this.data.playdata.guid,
         userid:app.globalData.token,
@@ -50,7 +50,7 @@ like(){
       data: false,
     })
     wx.request({
-      url: 'http://192.168.1.105:8000/like/like',
+      url: `${app.globalData.api}like/like`,
       data: {
         guid: this.data.playdata.guid,
         userid: app.globalData.token,
@@ -79,7 +79,7 @@ joinBtn(enent){
   }).then(() => {
     // on confirm
     wx.request({
-      url: 'http://192.168.1.105:8000/joinplay/joinplay',
+      url: `${app.globalData.api}joinplay/joinplay`,
       data: {
         guid: this.data.playdata.guid,
         userid: app.globalData.token,

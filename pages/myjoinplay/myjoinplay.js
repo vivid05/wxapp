@@ -14,7 +14,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://192.168.1.105:8000/getmyjoinplay/getmyjoinplay',
+      url: `${app.globalData.api}getmyjoinplay/getmyjoinplay`,
       data: {
         userid: app.globalData.token
       },

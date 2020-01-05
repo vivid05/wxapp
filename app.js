@@ -10,7 +10,7 @@ App({
           var thar=this;
           //发起网络请求
           wx.request({
-            url: 'http://192.168.1.105:8000/login/login',
+            url: `${this.globalData.api}login/login`,
             data: {
               code: res.code,
               Appid:'wx5d7f64288c8cba74',
@@ -29,6 +29,7 @@ App({
     })
   },
   globalData: {
+    api: 'http://192.168.1.2:8000/',
     token:'',
     joinList:[]
   },

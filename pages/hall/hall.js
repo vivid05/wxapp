@@ -1,5 +1,6 @@
 // pages/hall/hall.js
 import Toast from 'vant-weapp/toast/toast';
+const app = getApp()
 Page({
 
   /**
@@ -14,7 +15,7 @@ Page({
   getPlayinfo(redio){
     var that=this;
     wx.request({
-      url: `http://192.168.1.105:8000/getplay/getplay?redio=${redio}`, 
+      url: `${app.globalData.api}getplay/getplay?redio=${redio}`, 
       success(res) {
         console.log(res.data)
         var img=[]
@@ -56,6 +57,7 @@ Page({
    */
   onLoad: function (options) {
     this.getPlayinfo()
+    console.log(app.globalData.api)
   },
 
   /**
